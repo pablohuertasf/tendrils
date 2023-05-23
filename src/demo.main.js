@@ -2407,21 +2407,21 @@ export default (canvas, options) => {
 
             Object.assign(colorProxy, {
                 baseAlpha: 0.5,
-                baseColor: [183, 49, 126],
+                baseColor: [0, 0, 255],
                 flowAlpha: 1,
-                flowColor: [236, 251, 208],
+                flowColor: [0, 0, 0],
                 fadeAlpha: Math.max(state.flowDecay, 0.05),
-                fadeColor: [47, 15, 35]
+                fadeColor: [255, 255, 255]
             });
 
             toggleBase('dark');
 
             Object.assign(audioState, {
-                micSpawnAt: 0,
+                // micSpawnAt: 0,
                 micFormAt: audioDefaults.micFormAt*0.5,
-                micFlowAt: 0,
-                micFastAt: 0,
-                micCamAt: 0,
+                // micFlowAt: 0,
+                // micFastAt: 0,
+                // micCamAt: 0,
                 micSampleAt: audioDefaults.micSampleAt*0.9
             });
         },
