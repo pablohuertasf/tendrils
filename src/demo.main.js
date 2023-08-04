@@ -2693,7 +2693,7 @@ export default (canvas, options) => {
       false);
   }
 
-  (''+settings.keyboard !== 'false') && keyMash();
+  (''+settings.keyboard === 'true') && keyMash();
 
   // Need some stuff exposed.
   // @todo Come up with a better interface than this.
