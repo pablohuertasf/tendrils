@@ -121,9 +121,8 @@ export default (canvas, options) => {
   const state = tendrils.state;
 
   const appSettings = {
-    trackURL: (((''+settings.track).match(/(false|undefined)/gi))?
-        ''
-      : decodeURIComponent(settings.track)),
+    trackURL: (((''+settings.track).match(/(false|undefined)/gi))? ''
+      : settings.track),
 
     useMedia: (''+settings.use_media !== 'false'),
     useCamera: (''+settings.use_camera !== 'false'),
@@ -139,9 +138,8 @@ export default (canvas, options) => {
       parseInt((settings.loop_presets || 0), 10) || 0),
 
     pointerFlow: (''+settings.pointer_flow !== 'false'),
-    staticImage: ((settings.static_image)?
-        decodeURIComponent(settings.static_image)
-      : rootPath+'build/images/images/o-s-m+w.png')
+    staticImage: ((settings.static_image)? settings.static_image
+      : 'https://cdn.glitch.global/5a1020a0-a6aa-4bd7-9c92-f7f1c200d085/o-s-m%2Bw.png?v=1691763188287')
   };
 
   Object.assign(timer.app,
@@ -1524,7 +1522,7 @@ export default (canvas, options) => {
   // Debug
   window.tendrils = out;
 
-  presetters['Original Sing Light']();
+  (presetters[settings.preset] || presetters['Original Sing Dark'])();
 
   return out;
 };
